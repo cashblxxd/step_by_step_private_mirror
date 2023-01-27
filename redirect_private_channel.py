@@ -1,12 +1,13 @@
 from telethon.sync import TelegramClient
 from json import load, dump
-from dotenv import load_dotenv
 from datetime import datetime
 import os
 
-load_dotenv()
-API_ID, API_HASH = os.getenv("API_ID"), os.getenv("API_HASH")
-PRIVATE_CHAT_ID, REDIRECT_CHAT_ID = int(os.getenv("PRIVATE_CHAT_ID")), int(os.getenv("REDIRECT_CHAT_ID"))
+API_ID="18846638"
+API_HASH="26b31c20a07385d0770ce216a6f61c63"
+PRIVATE_CHAT_ID=-1001332191157
+REDIRECT_CHAT_ID=-1001786371730
+
 print("STARTED", datetime.now())
 with TelegramClient('MyApp', API_ID, API_HASH) as client:
     with open("last_message_id.json", "r+") as f:
